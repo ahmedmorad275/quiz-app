@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+:root {
+  --background: hsl(222 47% 11%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(217 33% 17%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(217 33% 17%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(239 84% 67%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(217 33% 17%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(217 33% 17%);
+  --muted-foreground: hsl(215 20% 65%);
+  --accent: hsl(267 84% 81%);
+  --accent-foreground: hsl(222 47% 11%);
+  --success: hsl(142 71% 45%);
+  --success-foreground: hsl(0 0% 100);
+  --error: hsl(0 84% 60%);
+  --error-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 62% 31%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(217 33% 17%);
+  --input: hsl(217 33% 17%);
+  --ring: hsl(239 84% 67%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(239 84% 67%),
+    hsl(267 84% 81%)
+  );
+  --gradient-success: linear-gradient(
+    135deg,
+    hsl(142 71% 45%),
+    hsl(158 64% 52%)
+  );
+  --gradient-hero: linear-gradient(
+    135deg,
+    hsl(239 84% 67% / 0.15),
+    hsl(267 84% 81% / 0.15)
+  );
+  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3),
+    0 2px 4px -1px hsl(0 0% 0% / 0.2);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.3),
+    0 4px 6px -2px hsl(0 0% 0% / 0.2);
+  --shadow-glow: 0 0 25px hsl(239 84% 67% / 0.5);
+  --sidebar-background: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding-top: 2rem;
+  line-height: 2;
+}
+header svg {
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 5rem;
+  margin: 12px auto;
+}
+.cards svg {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  height: 2rem;
+  width: 2rem;
+}
