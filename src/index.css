@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: hsl(222 47% 11%);
@@ -83,4 +83,10 @@ header svg {
   margin-bottom: 1rem;
   height: 2rem;
   width: 2rem;
+}
+#submitBtn:hover {
+  opacity: 0.85;
+}
+.cards div:hover {
+  transform: translateY(-10px);
 }
