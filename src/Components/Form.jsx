@@ -1,7 +1,12 @@
 import React from "react";
 import { LuZap } from "react-icons/lu";
-
+import { useNavigate } from "react-router-dom";
 const Form = () => {
+  let navigate = useNavigate();
+  function goToQuizPage() {
+    navigate("/quiz");
+  }
+
   return (
     <div
       id="loginForm"
@@ -57,20 +62,23 @@ const Form = () => {
             Difficulty
           </label>
           <select
+            defaultValue="medium"
             name="difficulty"
             id="difficulty"
             className="focus:outline-2 focus:outline-(--primary) outline-0 flex h-10 w-full rounded-md border border-(--input) bg-(--background) px-3 py-2 ring-offset-(--background) file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-(--foreground) placeholder:text-(--muted-foreground) disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-base cursor-pointer"
           >
             <option value="easy">Easy</option>
-            <option value="medium" selected>
-              Medium
-            </option>
+            <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
         </div>
         {/* Submit Button */}
         <div className=" ">
           <button
+            onClick={(e) => {
+              e.preventDefault();
+              goToQuizPage();
+            }}
             id="submitBtn"
             type="submit"
             className="my-3 bg-(--primary) py-2 px-3 rounded-lg justify-center hover:opacity-85 items-center gap-2 transition-opacity inline-flex w-full cursor-pointer"

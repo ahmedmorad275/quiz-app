@@ -1,0 +1,27 @@
+== Main Page ==
+Header
+-- Logo
+-- Title
+-- Description
+====================
+Best Score
+-- SVG
+-- Text
+====================
+Form
+-- Main Text
+-- Required Details
+-- Label for name
+-->> input for name
+-- Label for category
+-->> Select for category
+-- Label for difficulty
+-->> Select for difficulty
+-- Submit button
+=====================
+Cards
+-- Logo & Multiple Categories
+-- Logo & Timed Challenges
+-- Logo & Track Best Score
+=== End of Main Page ===
+----------------------------------

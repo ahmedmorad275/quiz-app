@@ -1,15 +1,16 @@
-import BestScore from './Components/BestScore';
-import Cards from './Components/Cards';
-import Form from './Components/Form';
-import Header from './Components/Header';
+import HomePage from "./pages/HomePage";
+import QuizPage from "./pages/QuizPage";
+import { Routes, Route } from "react-router-dom";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
   return (
     <>
-      <Header />
-      <BestScore />
-      <Form />
-      <Cards />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/result" element={<ResultPage />} />
+      </Routes>
     </>
   );
 }
