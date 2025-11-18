@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: hsl(222 47% 11%);
@@ -87,6 +87,18 @@ header svg {
 #submitBtn:hover {
   opacity: 0.85;
 }
+#submitBtn:hover:disabled{
+  opacity: 0.5;
+}
 .cards div:hover {
   transform: translateY(-10px);
+}
+.shadow-glow {
+  --tw-shadow: var(--shadow-glow);
+  --tw-shadow-colored: var(--shadow-glow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.ring-offset-background {
+  --tw-ring-offset-color: var(--background);
 }
