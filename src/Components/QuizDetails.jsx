@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { mainContext } from '../Contexts/Context';
 import { questions as importedQuestions } from '../Data/questions';
-import ContextProvider from '../Contexts/ContextProvider';
 
 const QuizDetails = () => {
   const questions = importedQuestions;

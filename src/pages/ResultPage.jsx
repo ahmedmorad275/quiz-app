@@ -1,14 +1,16 @@
-import React from 'react';
-import { GoTrophy } from 'react-icons/go';
-import { PiMedalBold } from 'react-icons/pi';
-import { LuTarget } from 'react-icons/lu';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from "react";
+import { GoTrophy } from "react-icons/go";
+import { PiMedalBold } from "react-icons/pi";
+import { LuTarget } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
+import { mainContext } from "../Contexts/Context";
 
 const ResultPage = () => {
   let navigate = useNavigate();
   function goToQuizPage(target) {
     navigate(`/${target}`);
   }
+  const { setCurrent } = useContext(mainContext);
   return (
     <section className="mt-8">
       <div className="mb-6 flex justify-center">
@@ -52,11 +54,11 @@ const ResultPage = () => {
         {/* Stats */}
         <div className="stats text-left border border-(--primary)/40 shadow-sm my-4 p-3 rounded-lg">
           <p className="flex justify-between text-(--muted-foreground) text-sm mb-2">
-            Total Questions:{' '}
+            Total Questions:{" "}
             <span className="text-(--foreground) font-bold">5</span>
           </p>
           <p className="flex justify-between text-(--muted-foreground) text-sm">
-            Wrong Answers:{' '}
+            Wrong Answers:{" "}
             <span className="text-(--foreground) font-bold">3</span>
           </p>
         </div>
@@ -65,23 +67,29 @@ const ResultPage = () => {
           className="bestScoreResult
           bg-(--card) flex items-center justify-center gap-2 p-6 py-4
           border border-(--primary)/40 shadow-sm text-sm text-(--muted-foreground)
-          rounded-xl my-4">
+          rounded-xl my-4"
+        >
           <GoTrophy className="text-(--primary) text-lg" />
           <p>
-            Best Score:{' '}
+            Best Score:{" "}
             <span className="text-md font-bold text-(--foreground)">1</span>
           </p>
         </div>
         {/* Buttons */}
         <div className="buttons grid grid-cols-2 gap-4">
           <button
-            onClick={() => goToQuizPage('quiz')}
-            className="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-(--primary) text-(--primary-foreground) hover:bg-(--primary)/90 shadow-md hover:shadow-lg transition-all duration-300 h-11 rounded-md px-8 w-full">
+            onClick={() => {
+              setCurrent(0);
+              goToQuizPage("quiz");
+            }}
+            className="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-(--primary) text-(--primary-foreground) hover:bg-(--primary)/90 shadow-md hover:shadow-lg transition-all duration-300 h-11 rounded-md px-8 w-full"
+          >
             Play again
           </button>
           <button
-            onClick={() => goToQuizPage('')}
-            className="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-(--primary)/20 bg-(--background) hover:bg-(--primary)/5 hover:border-(--primary)/40 transition-all duration-300 h-11 rounded-md px-8 w-full">
+            onClick={() => goToQuizPage("")}
+            className="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-(--primary)/20 bg-(--background) hover:bg-(--primary)/5 hover:border-(--primary)/40 transition-all duration-300 h-11 rounded-md px-8 w-full"
+          >
             Home
           </button>
         </div>
